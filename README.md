@@ -1,8 +1,7 @@
 # Omniauth::Socialstudio
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/omniauth/socialstudio`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+OmniAuth Strategy for connecting to SocialStudio API. (https://developer.salesforce.com/docs/atlas.en-us.api_social.meta/api_social/). 
+Connection strategy is very barebones and only oauth token is returned, which can be used subsequently for other API endpoints. 
 
 ## Installation
 
