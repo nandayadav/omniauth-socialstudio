@@ -1,6 +1,8 @@
 # Omniauth::Socialstudio
 
-OmniAuth Strategy for connecting to SocialStudio API. (https://developer.salesforce.com/docs/atlas.en-us.api_social.meta/api_social/). 
+OmniAuth Strategy for connecting to SocialStudio API. 
+
+(https://developer.salesforce.com/docs/atlas.en-us.api_social.meta/api_social/). 
 Connection strategy is very barebones and only oauth token is returned, which can be used subsequently for other API endpoints. 
 
 ## Installation
@@ -21,7 +23,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+# Refreshing a token(https://developer.salesforce.com/docs/atlas.en-us.200.0.api_social.meta/api_social/7-refresh-token.htm)
+Social Studio access_tokens are short lived and need to be refreshed often. Use the refresh_token to ask for new token. Sample code below uses HTTParty. 
+
+```ruby
+
+#refresh_token = returned in final oauth2 step
+#API_KEY = application key provided by Social Studio
+#API_SECRET = application secrete provided by Social Studio
+
+HTTParty.post(
+  'https://api.socialstudio.radian6.com/oauth/token',
+  query: {
+    grant_type: 'refresh_token',
+    refresh_token: refresh_token,
+    client_id: API_KEY,
+    client_secret: API_SECRET
+  }
+)
+
+```
+Store the new access_token returned as part of response above, for subsequent API calls. 
 
 ## Development
 
