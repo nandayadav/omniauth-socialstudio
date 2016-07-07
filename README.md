@@ -23,8 +23,10 @@ Or install it yourself as:
 
 ## Usage
 
-# Refreshing a token(https://developer.salesforce.com/docs/atlas.en-us.200.0.api_social.meta/api_social/7-refresh-token.htm)
-Social Studio access_tokens are short lived and need to be refreshed often. Use the refresh_token to ask for new token. Sample code below uses HTTParty. 
+## Refreshing a token
+Social Studio access_tokens are short lived and need to be refreshed often. Use the refresh_token to ask for new token. Sample code below uses HTTParty. Store the new access_token returned as part of response for call below, for subsequent API calls. 
+
+More here: (https://developer.salesforce.com/docs/atlas.en-us.200.0.api_social.meta/api_social/7-refresh-token.htm)
 
 ```ruby
 
@@ -43,7 +45,6 @@ HTTParty.post(
 )
 
 ```
-Store the new access_token returned as part of response above, for subsequent API calls. 
 
 ## Development
 
